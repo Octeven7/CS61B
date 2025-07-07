@@ -87,7 +87,7 @@ public class IntList {
             ptr = ptr.rest ;
         }
         ptr.rest = B ;
-        return null;
+        return A;
     }
 
     /**
@@ -100,12 +100,12 @@ public class IntList {
         IntList ptrA = A ;
         IntList ptrR = res ;
         while (ptrA.rest != null) {
-            ptrR = new IntList(ptrA.first , ptrA.rest) ;
+            ptrR.rest = new IntList(ptrA.rest.first, ptrA.rest.rest) ;
             ptrA = ptrA.rest ;
             ptrR = ptrR.rest ;
         }
         ptrR.rest = B ;
-        return null;
+        return res;
     }
 
 
